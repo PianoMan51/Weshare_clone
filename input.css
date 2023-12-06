@@ -1,0 +1,425 @@
+:root {
+    --blue: #3498db;
+    --darkerBlue: #2980b9;
+    --background: #ffffff;
+    --lightgray: #dfe6e9;
+    --gray: #b2bec3;
+    --darkgray: #636e72;
+    --red: #e74c3c;
+    --yellow: #f1c40f;
+    --darkyellow: #f39c12;
+    --green: #2ecc71;
+    --darkgreen: #27ae60;
+    --purple: #9b59b6;
+    --darkpurple: #8e44ad;
+}
+
+body {
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    background-color: var(--background);
+}
+
+.app {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    margin-top: 5%;
+}
+
+.input {
+    height: 900px;
+    width: 900px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--lightgray);
+}
+
+.input button {
+    cursor: pointer;
+}
+
+.input::-webkit-scrollbar {
+    display: none;
+}
+
+#inputdiv {
+    text-align: center;
+    margin: 50px;
+    padding: 10px 20px;
+    overflow-y: scroll;
+}
+
+#inputButtons {
+    background-color: var(--gray);
+    height: 40px;
+}
+
+#inputButtons button {
+    height: 10px;
+    border: none;
+    width: 40px;
+    margin: 15px;
+    margin-right: 0px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+
+#inputButtons button:hover {
+    transform: scaleY(2);
+    transition: transform 0.3s ease-in;
+}
+
+#settingsButtons {
+    background-color: var(--darkyellow);
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+#settingsButtons button {
+    float: left;
+    height: 10px;
+    border: none;
+    width: 40px;
+    margin: 10px 10px 10px 10px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+
+#settingsButtons button:hover {
+    transform: scaleY(2);
+    transition: transform 0.3s ease-in;
+}
+
+#inputDeleteButton,
+#settingsDeleteButton {
+    background-color: #e74c3c;
+}
+
+#inputEditButton,
+#settingsEditButton {
+    background-color: #f1c40f;
+}
+
+#inputSizeButton,
+#settingsSizeButton {
+    background-color: #2ecc71;
+}
+
+#namebtn {
+    position: absolute;
+    right: 20px;
+    height: 120px;
+    width: 120px;
+    top: 6%;
+    border: none;
+    background-color: var(--gray);
+}
+
+#statsbtn {
+    position: absolute;
+    left: 20px;
+    height: 120px;
+    width: 120px;
+    top: 6%;
+    border: none;
+    background-color: var(--gray);
+}
+
+.forminput {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 6%;
+    width: 50%;
+    height: 80px;
+    background-color: var(--gray);
+    padding: 20px 40px;
+}
+
+#bannerList {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-color: var(--darkgray);
+}
+
+.forminput input {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    border: none;
+    border-bottom: solid 4px white;
+    background-color: transparent;
+    height: 60%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    color: var(--darkgray)
+}
+
+.forminput input::placeholder {
+    color: var(--darkgray);
+    opacity: 50%;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.forminput button {
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    background-color: white;
+    border: none;
+    height: 20px;
+    width: 20px;
+}
+
+#description {
+    border: none;
+    border-bottom: solid 4px white;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bolder;
+    color: var(--darkyellow);
+    font-size: 40px;
+    width: 65%;
+    margin: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#settings {
+    position: absolute;
+    display: none;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: var(--yellow);
+    width: 400px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 300px;
+    padding: 20px 40px;
+    height: 320px;
+}
+
+#settings input::placeholder {
+    color: white;
+    opacity: 50%;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+#bannerSettings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--darkyellow);
+    width: 100%;
+    height: 25px;
+}
+
+#nameSetting {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px;
+    background-color: var(--darkyellow);
+    width: 90%;
+    height: 50%;
+    overflow-y: scroll;
+}
+
+
+#nameSetting div {
+    list-style-type: none;
+    margin: 10px 20px;
+    text-align: left;
+    height: 30px;
+}
+
+#nameSetting span {
+    width: 45%;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#nameSetting input {
+    height: 20px;
+    width: 60px;
+    float: right;
+    border: none;
+    background-color: var(--yellow);
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+#invoiceSpecs p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    float: left;
+    margin-right: 40px;
+    width: 80px;
+}
+
+#invoiceSpecs span {
+    color: white;
+    height: 20px;
+}
+
+#invoiceSpecs div {
+    margin: 15px;
+    margin-bottom: 0px;
+}
+
+#invoiceSpecs {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    bottom: 0;
+    background-color: var(--blue);
+    height: 130px;
+    padding: 0px 20px 0px 20px;
+    overflow: scroll;
+}
+
+#invoiceDescSpec {
+    font-style: italic;
+    padding: 12px 20px;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#addInvoice {
+    background-color: transparent;
+    margin: 10px;
+}
+
+#invoice {
+    position: relative;
+    margin: 20px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in;
+    width: 300px;
+    height: 200px;
+    float: left;
+}
+
+#invoiceDivList {
+    position: absolute;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    left: 50%;
+    top: 300px;
+    transform: translate(-50%);
+    background-color: var(--gray);
+    padding-top: 30px;
+    overflow: scroll;
+}
+
+#invoiceDivList .last-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#invoiceDivList.height-transition {
+    transition: height 0.5s ease-in-out;
+}
+
+#invoiceDivList.width-transition {
+    transition: width 0.5s ease-in-out;
+}
+
+#invoiceDivList::-webkit-scrollbar {
+    display: none;
+}
+
+#invoice:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+}
+
+#invoiceButtons {
+    background-color: var(--darkerBlue);
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 30px;
+}
+
+#invoiceButtons button {
+    margin-left: 2%;
+    border: none;
+    height: 8px;
+    width: 15px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.3s ease-in;
+}
+
+#invoiceButtons button:hover {
+    transform: scaleY(2);
+    transition: transform 0.3s ease-out;
+}
+
+#invoiceData {
+    position: relative;
+    background-color: var(--blue);
+    height: 200px;
+}
+
+#invoiceData p {
+    /* Desc*/
+    font-style: italic;
+    padding: 12px 20px;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    text-align: center;
+    color: white;
+}
+
+#invoiceData span {
+    /* Amount*/
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    width: 89%;
+    height: 50px;
+    padding: 20px 0px 20px 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--darkerBlue);
+}

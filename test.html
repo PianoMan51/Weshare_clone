@@ -1,0 +1,92 @@
+<html>
+    <body>
+
+        <input type="text" id="inputField">
+        <button id="namebtn">Add</button>
+
+        <div id="textContainer">
+            <ul id="textList"></ul>
+        </div>
+
+
+
+
+        <script>
+let namebtn = document.getElementById("namebtn");
+// Initialize an empty list to store the text objects
+let nameList = [];
+
+// Function to add text
+namebtn.addEventListener("click", function(){
+
+  var inputField = document.getElementById("inputField");
+  var textList = document.getElementById("textList");
+
+  // Create a new object to store the text
+  let name = {};
+  name.text = inputField.value;
+
+  // Push the new object to the list
+  nameList.push(name);
+   // Create a new div element to display the text
+  let newDiv = document.createElement("div");
+  let textDiv = document.createElement("span");
+  let deleteBtn = document.createElement("button");
+
+  textDiv.innerHTML = name.text;
+
+  // Append the text to the textList element
+  textList.appendChild(newDiv);
+  newDiv.appendChild(textDiv);
+  newDiv.appendChild(deleteBtn);
+
+  // Create a button element
+  deleteBtn.innerHTML = "Delete";
+  deleteBtn.addEventListener("click", function(){
+    // Find the index of the div element in the nameList array
+    let index = nameList.indexOf(name);
+    // Remove the object from the list using splice method
+    nameList.splice(index, 1);
+    // Remove the div element from the textList element
+    textList.removeChild(newDiv);
+    // Update the local storage with the modified list
+    localStorage.setItem("nameList", JSON.stringify(nameList));
+  });
+
+  // Store the list in local storage
+  localStorage.setItem("nameList", JSON.stringify(nameList));
+  // Clear the input field
+  inputField.value = "";
+});
+
+// Function to load the local storage
+function loadLocalStorage() {
+  // Get the nameList from local storage
+  nameList = JSON.parse(localStorage.getItem("nameList")) || [];
+  // Loop through the list and append the div to the textList element
+  for (let i = 0; i < nameList.length; i++) {
+    let newDiv = document.createElement("div");
+    let textDiv = document.createElement("span");
+    let deleteBtn = document.createElement("button");
+    textDiv.innerHTML = nameList[i].text;
+    deleteBtn.innerHTML = "Delete";
+    deleteBtn.addEventListener("click", function(){
+      // Find the index of the div element in the nameList array
+      let index = nameList.indexOf(nameList[i]);
+      // Remove the object from the list using splice method
+      nameList.splice(index, 1);
+      // Remove the div element from the textList element
+      textList.removeChild(newDiv);
+      // Update the local storage with the modified list
+      localStorage.setItem("nameList", JSON.stringify(nameList));
+    });
+    textList.appendChild(newDiv);
+    newDiv.appendChild(textDiv);
+    newDiv.appendChild(deleteBtn);
+  }}
+
+
+  loadLocalStorage();
+</script>
+    </body>
+</html>

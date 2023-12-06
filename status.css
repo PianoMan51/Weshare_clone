@@ -1,0 +1,19 @@
+.stats {
+    position: absolute;
+    background: var(--purple);
+    height: 400px;
+    width: 480px;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+    top: 300px;
+}
+
+#bannerStats {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-color: var(--darkpurple);
+}
